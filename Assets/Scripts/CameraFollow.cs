@@ -34,6 +34,15 @@ public class CameraFollow : MonoBehaviour {
         mouseRotation.x += Input.GetAxis("CameraY");
         mouseRotation.y += Input.GetAxis("CameraX");
 
+        if (mouseRotation.x > 44)
+        {
+            mouseRotation.x = 44;
+        }
+        if (mouseRotation.x < -44)
+        {
+            mouseRotation.x = -44;
+        }
+
         this.transform.position = player.transform.position;
         this.transform.rotation = Quaternion.Euler(mouseRotation.x * 1.7f, mouseRotation.y * 1.7f, 0);
         this.transform.position -= transform.forward * offset;
