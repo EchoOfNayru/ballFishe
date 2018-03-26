@@ -550,10 +550,10 @@ GameObject:
   - component: {fileID: 135061542643512694}
   - component: {fileID: 23394309704958280}
   - component: {fileID: 54298366221271862}
-  - component: {fileID: 114488671794612750}
+  - component: {fileID: 114507237051298178}
   m_Layer: 0
   m_Name: BallFishe
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -607,8 +607,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958944896088870}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.86, z: -0.34}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1522918, y: 11.78, z: 14.069881}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4574489919327308}
@@ -1169,7 +1169,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1191,23 +1191,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114488671794612750
+--- !u!114 &114507237051298178
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958944896088870}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54eec783e0980c44fb9289947d382e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
   rb: {fileID: 54298366221271862}
-  speed: 600
-  jumpStr: 3
-  isGrounded: 0
-  onRail: 0
+  downForce: 60
+  startDelayTime: 1.2
+  isGravity: 0
 --- !u!135 &135061542643512694
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -12,11 +12,14 @@ public class CameraFollow : MonoBehaviour {
     public float offset = 5;         //Private variable to store the offset distance between the player and camera
     public Vector3 mouseRotation = new Vector3(45,90,0);
 
+    public float waitTimer;
+    public bool isOn;
+
     // Use this for initialization
     void Start()
     {
-        //Calculate and store the offset value by getting the distance between the player's position and camera's position.
-        //offset = transform.position - player.transform.position;
+        isOn = false;
+        StartCoroutine(StartDelay(waitTimer));
     }
 
     // LateUpdate is called after Update each frame
@@ -33,6 +36,12 @@ public class CameraFollow : MonoBehaviour {
 
         mouseRotation.x += Input.GetAxis("CameraY");
         mouseRotation.y += Input.GetAxis("CameraX");
+
+        if (!isOn)
+        {
+            mouseRotation.x -= Input.GetAxis("CameraY");
+            mouseRotation.y -= Input.GetAxis("CameraX");
+        }
 
         if (mouseRotation.x > 44)
         {
@@ -64,5 +73,12 @@ public class CameraFollow : MonoBehaviour {
 
 
 
+    }
+
+    private IEnumerator StartDelay(float waitTime)
+    {
+
+        yield return new WaitForSeconds(waitTime);
+        isOn = true;
     }
 }
